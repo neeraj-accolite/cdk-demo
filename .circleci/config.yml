@@ -35,6 +35,6 @@ workflow:
   cdk-deployment:
     jobs:
       - build
-      - deploy
+      - deploy:
           requires:
             - build
