@@ -18,6 +18,7 @@ jobs:
           role_session_name: neeraj_agrawal
   deploy:
     executor: node/default
+    steps:
       - checkout
       - run:
           name: 'Environvement variables'
