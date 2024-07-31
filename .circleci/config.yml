@@ -16,7 +16,7 @@ jobs:
           region: AWS_REGION_NAME
       - run:
           name: AWS Configuration
-          command: aws configure
+          command: aws configure list
       - checkout
       - run:
           name: 'Environvement variables'
