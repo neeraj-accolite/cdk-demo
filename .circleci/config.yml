@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  aws-cli: circleci/aws-cli@4.1.3
+  aws-cli: circleci/aws-cli@4.0.0
 executors:
   aws-executor:
     docker:
@@ -12,9 +12,9 @@ jobs:
     executor: default
     steps:
       - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY
-          aws-secret-access-key: AWS_ACCESS_SECRET
-          aws-region: AWS_REGION_NAME
+          aws_access_key_id: AWS_ACCESS_KEY
+          aws_secret_access_key: AWS_ACCESS_SECRET
+          aws_region: AWS_REGION_NAME
       - checkout
       - run:
           name: 'Build CDK App'
