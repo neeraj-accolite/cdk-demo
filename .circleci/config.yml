@@ -28,7 +28,7 @@ jobs:
             npm run build
       - run:
           name: 'cdk_deploy'
-          command: account=590376488337 region=us-east-1 npm run ci_deploy
+          command: account=${AWS_ACCOUNT_ID} region=${AWS_REGION_NAME} npm run ci_deploy
 workflow:
   cdk-deployment:
     jobs:
