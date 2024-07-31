@@ -13,7 +13,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - aws-cli/setup:
-          profile_name: WEB IDENTITY PROFILE
+          profile_name: neeraj_agrawal
           role_arn: arn:aws:iam::590376488337:user/neeraj_agrawal
           role_session_name: neeraj_agrawal
   deploy:
