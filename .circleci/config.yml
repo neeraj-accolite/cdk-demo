@@ -14,13 +14,7 @@ jobs:
           aws_access_key_id: AWS_ACCESS_KEY
           aws_secret_access_key: AWS_ACCESS_SECRET
           region: AWS_REGION_NAME
-      - run:
-          name: AWS Configuration
-          command: aws configure list
       - checkout
-      - run:
-          name: 'Environvement variables'
-          command: echo ${AWS_REGION_NAME}
       - run:
           name: 'Build CDK App'
           command: | 
