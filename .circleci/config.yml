@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: 'Environvement variables'
-          command: echo ${AWS_ACCOUNT_ID}
+          command: echo ${AWS_REGION_NAME}
       - run:
           name: 'Build CDK App'
           command: | 
@@ -25,7 +25,7 @@ jobs:
             npm run build
       - run:
           name: 'cdk_deploy'
-          command: ACCOUNT_ID=${AWS_ACCOUNT_ID} REGION_NAME=${AWS_REGION_NAME} npm run ci_deploy
+          command: npm run ci_deploy
 workflow:
   cdk-deployment:
     jobs:
