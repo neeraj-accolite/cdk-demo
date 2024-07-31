@@ -7,7 +7,7 @@ executors:
     docker:
       - image: 'cimg/node:22.5.1'
 jobs:
-  deployment:
+  build:
     executor: aws-executor
     steps:
       - aws-cli/setup:
@@ -21,9 +21,13 @@ jobs:
             npm install
             npm run build
       - run:
+          name: 'Test Cases'
+          command: |
+            npm test
+      - run:
           name: 'cdk_deploy'
           command: account=${AWS_ACCOUNT_ID} region=${AWS_REGION_NAME} npm run ci_deploy
 workflow:
   cdk-deployment:
     jobs:
-      - deployment
+      - build
