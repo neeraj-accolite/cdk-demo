@@ -6,7 +6,7 @@ executors:
     docker:
       - image: 'cimg/node:22.5.1'
     environment:
-      AWS_REGION: 'us-east-1'
+      AWS_REGION: AWS_REGION_ID
 jobs:
   build:
     executor: aws-executor
@@ -20,9 +20,10 @@ jobs:
           command: | 
             npm install
             npm run build
+            cdk synth
       - run:
           name: 'cdk_deploy'
-          command: npm run ci_deploy
+          command: ACCOUNT_ID=AWS_ACCOUNT_ID REGION_NAME=AWS_REGION_NAME npm run ci_deploy
 workflow:
   cdk-deployment:
     jobs:
