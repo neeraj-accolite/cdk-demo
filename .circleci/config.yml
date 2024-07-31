@@ -20,7 +20,6 @@ jobs:
           command: | 
             npm install
             npm run build
-            cdk synth
       - run:
           name: 'cdk_deploy'
           command: ACCOUNT_ID=AWS_ACCOUNT_ID REGION_NAME=AWS_REGION_NAME npm run ci_deploy
