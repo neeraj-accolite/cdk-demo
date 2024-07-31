@@ -6,18 +6,14 @@ executors:
   aws-executor:
     docker:
       - image: 'cimg/node:22.5.1'
-    environment:
-      AWS_REGION: us-east-1
 jobs:
   build:
-    executor: aws-executor
+    executor: aws-cli/default
     steps:
       - aws-cli/setup:
-          role_arn: arn:aws:iam::590376488337:user/neeraj_agrawal
           aws_access_key_id: AWS_ACCESS_KEY
           aws_secret_access_key: AWS_ACCESS_SECRET
-          region: us-east-1
-          profile_name: neeraj_agrawal
+          region: AWS_REGION_NAME
       - checkout
       - run:
           name: 'Environvement variables'
