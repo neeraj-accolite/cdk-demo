@@ -13,9 +13,9 @@ jobs:
     executor: aws-cli/default
     steps:
       - aws-cli/setup:
-          profile_name: neeraj_agrawal
-          role_arn: arn:aws:iam::590376488337:user/neeraj_agrawal
-          role_session_name: neeraj_agrawal
+          aws-access-key-id: AWS_ACCESS_KEY
+          aws-secret-access-key: AWS_ACCESS_SECRET
+          aws-region: AWS_REGION_NAME
   deploy:
     executor: node/default
     steps:
