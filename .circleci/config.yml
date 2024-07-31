@@ -9,7 +9,7 @@ executors:
       AWS_REGION: 'us-east-1'
 jobs:
   build:
-    executor: default
+    executor: aws-executor
     steps:
       - aws-cli/setup:
           aws_access_key_id: AWS_ACCESS_KEY
