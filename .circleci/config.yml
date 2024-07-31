@@ -13,9 +13,11 @@ jobs:
     executor: aws-executor
     steps:
       - aws-cli/setup:
+          role_arn: arn:aws:iam::590376488337:user/neeraj_agrawal
           aws_access_key_id: AWS_ACCESS_KEY
           aws_secret_access_key: AWS_ACCESS_SECRET
           region: AWS_REGION_NAME
+          profile_name: neeraj_agrawal
       - checkout
       - run:
           name: 'Environvement variables'
