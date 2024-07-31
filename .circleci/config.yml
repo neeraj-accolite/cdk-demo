@@ -14,6 +14,9 @@ jobs:
           aws_access_key_id: AWS_ACCESS_KEY
           aws_secret_access_key: AWS_ACCESS_SECRET
           region: AWS_REGION_NAME
+  deploy:
+    executor: node/default
+    steps:
       - checkout
       - run:
           name: 'Environvement variables'
@@ -30,3 +33,4 @@ workflow:
   cdk-deployment:
     jobs:
       - build
+      - deploy
