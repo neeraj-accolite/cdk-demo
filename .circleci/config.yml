@@ -2,10 +2,10 @@ version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@4.0.0
   node: circleci/node@5
-executors:
-  aws-executor:
-    docker:
-      - image: 'cimg/node:22.5.1'
+# executors:
+#   aws-executor:
+#     docker:
+#       - image: 'cimg/node:22.5.1'
 jobs:
   build-app:
     executor: aws-cli/default
