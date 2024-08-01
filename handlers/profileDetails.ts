@@ -15,7 +15,7 @@ exports.handler = async function (event: APIGatewayProxyEvent): Promise<APIGatew
         },
         body: JSON.stringify({
             id: 1234,
-            first_name: "profile-first",
+            first_name: "first_name",
             last_name: "last_name",
             department: "Accounts & Management",
             email: "profile@email.com",
